@@ -13,7 +13,9 @@ which open questions get recorded.
 ## Flow
 
 1. **Pick the requirement**: `mcp__skald__listRequirements` / `getExistingRequirements`; or
-   create it (`createRequirements`, status `Draft`, title in user-story or EARS shape).
+   create it (`createRequirements`, status `Draft`, title in user-story or EARS shape, plus a
+   `domainId` agreed with the PM — read `listDomains`, propose the best fit and say why, and
+   never create one unassigned).
 2. **Rules**: elicit the agreed behaviours — short, testable statements. `createRules` /
    `updateRule`.
 3. **Examples**: for each rule worth illustrating, concrete Gherkin scenarios

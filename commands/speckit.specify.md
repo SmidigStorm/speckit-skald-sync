@@ -32,12 +32,17 @@ run this sync via the Skald MCP tools (`mcp__skald__*`).
 **Requirements: adopt before creating.**
 
 5. Read the Skald side: `getBacklogItemDetail`, `listRequirements`, `listRules`,
-   `listExamples`, `listOpenQuestions`. When the spec covers ground an existing requirement
-   already describes, ADOPT it (propose `updateRequirement` if the spec refines its wording)
-   — never duplicate. Only create genuinely new ones: `createRequirements`, status `Draft`,
-   one per user story / coherent FR cluster, plus `createRules` (from FRs) and
-   `createExamples` (Gherkin, from acceptance scenarios) where valuable. Follow the
-   `skald-requirements` skill for title shapes and Gherkin conventions.
+   `listExamples`, `listOpenQuestions`, `listDomains`. When the spec covers ground an existing
+   requirement already describes, ADOPT it (propose `updateRequirement` if the spec refines its
+   wording) — never duplicate. Only create genuinely new ones: `createRequirements`, status
+   `Draft`, one per user story / coherent FR cluster, plus `createRules` (from FRs) and
+   `createExamples` (Gherkin, from acceptance scenarios) where valuable. Every new requirement
+   MUST carry a `domainId`: propose the best-fit domain from `listDomains` (say which and why,
+   offer the alternatives when two are plausible, propose `createDomain` if nothing fits) and
+   agree it with the PM in the same summary as the rest of the requirement — `domainId` is
+   optional in the schema, so an unassigned requirement is a silent defect, not a valid state.
+   Follow the `skald-requirements` skill for title shapes, domain assignment, and Gherkin
+   conventions.
 6. Link every adopted or created requirement to the PBI via `linkRequirementToBacklogItem`.
 7. Every `[NEEDS CLARIFICATION]` marker → propose `createOpenQuestions` on the owning
    requirement.
