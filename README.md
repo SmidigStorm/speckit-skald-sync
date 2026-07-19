@@ -12,9 +12,24 @@ move as one. **One Skald backlog item (PBI) = one Spec Kit feature**: the PBI's 
 
 - Spec Kit ≥ 0.6.0 with preset support.
 - The Skald MCP server connected in your agent runtime (tools appear as `mcp__skald__*`).
-- The `skald-*` methodology skills available in the workspace (`skald-strategy`,
-  `skald-domain-management`, `skald-goals`, `skald-planning`, `skald-requirements`) — the
-  commands carry the workflow and reference these for the underlying methodology.
+
+## Bundled methodology skills
+
+The `skald-*` methodology skills the commands reference are **included in this repo** under
+[`.claude/skills/`](.claude/skills) — `skald-strategy`, `skald-requirements`, `skald-planning`,
+`skald-goals`, `skald-domain-management`, and `skald-health-check`. These are the **single
+source of truth**, published straight from the Skald app (the same files the in-app agent
+loads); this mirror is regenerated on every change.
+
+The commands carry the *workflow* (when to run, what to read/write, status transitions,
+confirmation discipline) and reference these skills for the underlying *methodology* (Perdoo
+OKRs, Gherkin conventions, Entity/Process/Term classification, INVEST splitting, the health
+scan rubric).
+
+**To use them:** copy `.claude/skills/` into your project. Claude Code discovers skills there
+automatically; other agents can point their skill loader at the same folder (or move them to
+wherever your runtime expects). Because the skills travel with this repo, the preset works
+straight out of a clone — no separate skill install.
 
 ## What it does
 

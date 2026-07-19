@@ -6,7 +6,7 @@ description: Refine the Skald backlog outside a delivery — create, split, size
 
 Project-level, before delivery: the pre-flow work that produces a PBI ready for
 `/speckit-specify`. Methodology: follow the `skald-planning` skill — PBI types
-(Feature/Story/Bug/Spike/Refactor) with per-type title shapes, S/M/L/XL relative sizing
+(Feature/Bug/Refactor/Spike) with per-type title shapes, S/M/L/XL relative sizing
 calibrated for AI-assisted delivery, the user-perspective splitting heuristic, and the
 PM-only prioritisation rule.
 
