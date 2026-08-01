@@ -112,6 +112,40 @@ Findings → **skald-goals**:
 - More than 5 KRs on an Objective → focus is diluted.
 - KRs with no check-ins for a long stretch → goals have gone stale.
 
+## Layer 6 — Research (only when the project has any)
+
+**Read**: `listInsights`, `listInsights({ staleOnly: true })`,
+`listRecommendations({ unactionedOnly: true })`.
+
+**Silence is the correct output for a project with no research.** If
+`listInsights` and `listRecommendations` both come back empty, this layer
+produces no findings, no section and no "0 insights" line — and it never
+recommends starting to do UX research. A product that has never recorded
+research is not thereby unhealthy.
+
+Healthy (when research exists):
+- Claims have been re-read recently — `stale` is false. Staleness is
+  derived on every read (nobody has re-read the claim in 90 days), never
+  stored.
+- Recommendations have produced work — `actioned` is true, meaning the
+  recommendation points at a requirement or a backlog item.
+- Contested claims exist and are fine. A claim with refuting evidence is
+  a signal to go and look, **not a finding to clear**.
+
+Findings → **skald-research**:
+- **Claims overdue for review** (`staleOnly: true`) → name them by
+  `IN-n`, most overdue first. The fix is for a human to re-read the claim
+  and its evidence, then `markInsightReviewed`. **Never suggest marking
+  several reviewed at once** — a claim marked reviewed that nobody read
+  is worse than one openly overdue, because it looks checked.
+- **Un-actioned recommendations** (`unactionedOnly: true`) → research was
+  done and then nothing happened. Either turn it into work
+  (`createWorkFromRecommendation` → **requirements** / **planning**) or
+  archive it deliberately.
+- **Requirements with no research backing** are *not* a finding. Most
+  requirements come from somewhere other than a study, and manufacturing
+  that finding would push people to attach evidence that doesn't exist.
+
 ## Cross-layer findings
 
 Some of the most useful findings span layers:
@@ -147,6 +181,8 @@ The union of read tools the health check uses. None of these write.
 | `listGoals` / `getExistingGoals` | objectives + key results |
 | `getCheckInHistory` | progress trail on a KR (staleness) |
 | `getDomainImpact` | blast radius of a domain (for restructure findings) |
+| `listInsights` | research claims, with derived `contested` / `stale`; `staleOnly: true` narrows to the overdue ones |
+| `listRecommendations` | research recommendations with derived `actioned`; `unactionedOnly: true` narrows to those that produced no work |
 
 If the scan is large, sample rather than reading every rule/example
 individually — read enough to judge the pattern, and say in the output

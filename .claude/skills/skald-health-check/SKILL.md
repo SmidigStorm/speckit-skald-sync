@@ -1,6 +1,6 @@
 ---
 name: skald-health-check
-description: Your Skald health check — figures out what to do next in a product. It runs a full read-only health scan across every Skald layer (Vision, Users, Domains, Glossary, Requirements with rules and examples, Backlog Items with linkage and sizing, Goals/OKRs), forms an opinionated view of what's missing or weak, and recommends one to five concrete next steps, each routed to the right domain (strategy, domains & glossary, requirements, planning, goals, delivery). It never writes; it diagnoses and hands off. Use this skill whenever the user asks what to do next, where to start, what's missing, or how healthy the product is — even if they don't say "Skald". Also trigger on phrases like "what's next", "where do I start", "what should I work on", "what's missing", "is this product in good shape", "give me a health check", "I don't know what to do", or at the start of working in a product when direction is unclear.
+description: Your Skald health check — figures out what to do next in a product. It runs a full read-only health scan across every Skald layer (Vision, Users, Domains, Glossary, Requirements with rules and examples, Backlog Items with linkage and sizing, Goals/OKRs, and UX research where a project has any), forms an opinionated view of what's missing or weak, and recommends one to five concrete next steps, each routed to the right domain (strategy, domains & glossary, requirements, planning, goals, delivery). It never writes; it diagnoses and hands off. Use this skill whenever the user asks what to do next, where to start, what's missing, or how healthy the product is — even if they don't say "Skald". Also trigger on phrases like "what's next", "where do I start", "what should I work on", "what's missing", "is this product in good shape", "give me a health check", "I don't know what to do", or at the start of working in a product when direction is unclear.
 ---
 
 # Skald Health Check
@@ -41,6 +41,23 @@ Read across all layers (don't write):
   `listExamples` / `listOpenQuestions` on a sample (or all, if few).
 - **Planning** — `listPbis`, `getExistingBacklogItems`, `getTeams`.
 - **Goals** — `getTimePeriods`, `listGoals`.
+- **Research** (only when the project has any) — `listInsights`, then
+  `listInsights({ staleOnly: true })` and
+  `listRecommendations({ unactionedOnly: true })`.
+
+**A project with no research contributes nothing to the report** — no
+Research section, no "0 insights", no recommendation to start doing UX
+research. `listInsights` and `listRecommendations` both returning empty
+means this layer is silent.
+
+The same silence is correct when the research tools are **absent from your
+catalogue entirely**: UX research is an optional module, so an organization
+that has not switched it on gets no research tools at all. Skip the layer
+without comment — do not report the module as missing, and never suggest
+enabling it. From the report's point of view "no records" and "no module"
+are the same answer: nothing to say. A product that has never recorded research is
+not thereby unhealthy, and a report padded with empty sections teaches
+the PM to skim the ones that matter.
 
 When the active project isn't already known (in the in-app chat it is
 auto-filled from the URL), start with `listProjects` and ask the PM
@@ -69,6 +86,15 @@ headline opinions:
   are findings.
 - **Goals are outcomes, not outputs** — a Key Result that's really an
   output, or an Objective with a metric baked in, is a finding.
+- **Research that exists is kept alive** — *only if the project records
+  any.* A claim nobody has re-read in 90 days reads as **review due**,
+  and a recommendation that produced neither a requirement nor a backlog
+  item is **un-actioned**: research that was done and then ignored. Both
+  are derived on every read, never stored, so they cannot go quietly out
+  of date. Report the specific claims and recommendations, and never
+  suggest clearing them in bulk — `markInsightReviewed` means somebody
+  re-read the claim, and marking a batch reviewed without reading makes
+  the whole signal worthless.
 - **Statuses tell the truth** — statuses are gate verdicts (skald-sdd):
   a PBI In Progress whose linked requirements are all still Draft, or a
   requirement Delivered under a PBI that never started, is a finding.
@@ -117,6 +143,7 @@ to do the work):
 | Requirements without rules/examples, untestable reqs, splitting needed | **Requirements** |
 | PBIs unlinked / unsized / unrefined, backlog shape | **Planning** |
 | No OKRs, output-shaped KRs, no check-ins | **Goals** |
+| Claims overdue for review, recommendations that produced no work | **Research** (skald-research) |
 | A refined PBI ready to build / ship | **Delivery** — concept in **skald-sdd**; conducted from the PM's dev tooling via the speckit-skald-sync Spec Kit preset (not available in the in-app chat; point the PM there) |
 | Statuses that don't match reality, "what does Approved/Done mean?" | **skald-sdd** (the lifecycle + gate-verdict semantics), then Requirements/Planning for the fix |
 
