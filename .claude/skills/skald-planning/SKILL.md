@@ -5,6 +5,13 @@ description: How to create, refine, split, estimate, prioritise, and link Produc
 
 # Skald Planning
 
+> **This is reference for you, not a script to read out.** The user asked a
+> question, not for the manual. Answer it in a few points — three to five, the
+> ones that matter for what they actually asked — then ask which part they want
+> to go into. Never deliver a section-by-section tour of this document. If you
+> find yourself writing headings, you are reciting: stop and ask instead.
+
+
 ## What a PBI is in Skald
 
 A Product Backlog Item (PBI) is a **planned unit of work**. PBIs group a set
@@ -325,3 +332,20 @@ Quick reference — the tools you'll reach for most:
   title reads consistently.
 - `listGoals` — surface the Key Result this PBI might support; the PM
   may want to link via `linkKeyResultToBacklogItem`.
+
+## Draw it
+
+In the app's agent workspace you have a canvas.
+
+- Explaining **what a backlog item is** — its types, how it's sized, that Skald is
+  sprint-free — call `showCanvasVisual` with `visual: "backlog-model"`.
+- Asked whether one specific item **could be handed to a team or a coding agent
+  right now**, call it with `visual: "item-readiness"`. Answer with what would
+  stop it, not with how ready it is.
+- **Asked to SEE a specific artefact** — "show me PB-12", "open REQ-40", "what's
+  in this item" — call it with `visual: "subject-card"` as you fetch the
+  details. Draw it, then talk through what you found; do not answer with a
+  prose-only summary of something the canvas can show.
+
+Not this visual: *how* a change becomes code, and what a status means as a
+verdict, is `sdd-delivery`.

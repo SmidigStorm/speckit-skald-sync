@@ -5,6 +5,13 @@ description: Your Skald health check — figures out what to do next in a produc
 
 # Skald Health Check
 
+> **This is reference for you, not a script to read out.** The user asked a
+> question, not for the manual. Answer it in a few points — three to five, the
+> ones that matter for what they actually asked — then ask which part they want
+> to go into. Never deliver a section-by-section tour of this document. If you
+> find yourself writing headings, you are reciting: stop and ask instead.
+
+
 The health check answers one question: **what should I do next in this product?**
 
 It does that by scanning the whole product's state in Skald, forming an

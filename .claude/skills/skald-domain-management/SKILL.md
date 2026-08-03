@@ -5,6 +5,13 @@ description: How to model a product's domain in Skald — creating the domain hi
 
 # Skald Domain Management
 
+> **This is reference for you, not a script to read out.** The user asked a
+> question, not for the manual. Answer it in a few points — three to five, the
+> ones that matter for what they actually asked — then ask which part they want
+> to go into. Never deliver a section-by-section tour of this document. If you
+> find yourself writing headings, you are reciting: stop and ask instead.
+
+
 Skald's Domain module captures **what the product is about** as a tree of
 domains, each owning a glossary of Entities, Processes, and Terms. It's
 lightly inspired by Domain-Driven Design — domains play the role of
@@ -189,3 +196,12 @@ Quick reference:
 - `listRequirements({ projectId })` — see what's linked to a domain
   before restructuring.
 - `listProjects()` — when you don't already have a `projectId`.
+
+## Draw it
+
+In the app's agent workspace you have a canvas. When you explain how domains nest,
+or what an **Entity**, a **Process** and a **Term** each are, call
+`showCanvasVisual` with `visual: "domain-tree"`.
+
+Not this visual: the shape of the whole product — vision through to a buildable
+item — is `product-development-flow`.

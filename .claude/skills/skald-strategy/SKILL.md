@@ -5,6 +5,13 @@ description: How to draft and maintain a product's Vision and User list in Skald
 
 # Skald Strategy
 
+> **This is reference for you, not a script to read out.** The user asked a
+> question, not for the manual. Answer it in a few points — three to five, the
+> ones that matter for what they actually asked — then ask which part they want
+> to go into. Never deliver a section-by-section tour of this document. If you
+> find yourself writing headings, you are reciting: stop and ask instead.
+
+
 The Strategy module in Skald is small and focused: a product has one
 **Vision** and a list of **Users**. Both are PM-owned. The agent's job
 is to help the PM articulate them clearly — by conducting the interview
@@ -210,3 +217,13 @@ what was summarised.
 For `setProjectVision` specifically: show the full proposed body in the
 summary, not just a description. The PM is replacing content; they need
 to see what's going in.
+
+## Draw it
+
+In the app's agent workspace you have a canvas. When the PM wants to see where the
+vision stands — after a board interview, or when they ask what they decided — call
+`showCanvasVisual` with `visual: "vision-board"`. It reads their real project, so
+it is a mirror rather than a lesson: don't narrate the boxes back to them, talk
+about what's thin or missing.
+
+Empty boxes are not failures. A PM may decide a box does not apply.

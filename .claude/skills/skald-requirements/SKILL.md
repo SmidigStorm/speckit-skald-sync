@@ -5,6 +5,13 @@ description: How to write, refine, split, and manage requirements in Skald — t
 
 # Skald Requirements
 
+> **This is reference for you, not a script to read out.** The user asked a
+> question, not for the manual. Answer it in a few points — three to five, the
+> ones that matter for what they actually asked — then ask which part they want
+> to go into. Never deliver a section-by-section tour of this document. If you
+> find yourself writing headings, you are reciting: stop and ask instead.
+
+
 ## What a requirement is in Skald
 
 A capability the product must support, written user-facing and solution-free.
@@ -267,3 +274,22 @@ Quick reference — the tools you'll reach for most:
 - `listDomainTerms` — use the project's existing vocabulary so the requirement reads consistently.
 - `listGoals` — link the requirement back to an objective if the PM wants to.
 - `listPbis` — check whether an existing PBI already covers it.
+
+## Draw it
+
+In the app's agent workspace you have a canvas.
+
+- Teaching the method — rules, examples, open questions, or why a rule without an
+  example isn't grounded — call `showCanvasVisual` with
+  `visual: "example-mapping"`.
+- Working through **several** requirements under one backlog item or domain, where
+  the PM needs the whole set in view rather than the one in front of them, call it
+  with `visual: "requirement-set"`. This is the answer to *"after the fourth one
+  I've lost track"* — reach for it before they say it.
+- **Asked to SEE a specific artefact** — "show me PB-12", "open REQ-40", "what's
+  in this item" — call it with `visual: "subject-card"` as you fetch the
+  details. Draw it, then talk through what you found; do not answer with a
+  prose-only summary of something the canvas can show.
+
+Then don't restate the diagram; say what it doesn't — the judgement, the gap, the
+next move.

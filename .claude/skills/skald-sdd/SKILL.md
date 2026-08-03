@@ -5,6 +5,13 @@ description: Spec-Driven Development (SDD) in Skald — how requirements are use
 
 # Spec-Driven Development in Skald
 
+> **This is reference for you, not a script to read out.** The user asked a
+> question, not for the manual. Answer it in a few points — three to five, the
+> ones that matter for what they actually asked — then ask which part they want
+> to go into. Never deliver a section-by-section tour of this document. If you
+> find yourself writing headings, you are reciting: stop and ask instead.
+
+
 **The requirement is the spec. One PBI is one change.** Everything else
 in this skill unpacks those two sentences.
 
@@ -147,3 +154,16 @@ questions and learnings flow back into the living spec.
 - **BDUF in disguise** — trying to perfect the spec before any building
   starts. The write-back rule exists precisely so specs can start good
   and get right.
+
+## Draw it
+
+In the app's agent workspace you have a canvas.
+
+- Asked how a spec becomes code, what a status actually means, or why the
+  requirement outranks a spec file — call `showCanvasVisual` with
+  `visual: "sdd-delivery"`.
+- Asked how Skald fits together as a whole, or where something sits in the bigger
+  picture — call it with `visual: "product-development-flow"`, optionally with `subject` set to
+  the stage under discussion.
+
+Not this visual: what a backlog item *is* and how it's sized is `backlog-model`.

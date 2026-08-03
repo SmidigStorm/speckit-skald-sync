@@ -5,6 +5,13 @@ description: How to set and track OKRs (Objectives and Key Results) in Skald, fo
 
 # Skald Goals (OKRs)
 
+> **This is reference for you, not a script to read out.** The user asked a
+> question, not for the manual. Answer it in a few points — three to five, the
+> ones that matter for what they actually asked — then ask which part they want
+> to go into. Never deliver a section-by-section tour of this document. If you
+> find yourself writing headings, you are reciting: stop and ask instead.
+
+
 Skald's Goals module follows the **OKR** framework as codified by Perdoo.
 The agent helps the PM write good OKRs and record progress; the PM owns
 the goals.
@@ -184,3 +191,13 @@ Quick reference:
   make the vision's business goals measurable.
 - `getExistingBacklogItems` — required before linking a KR to a PBI.
 - `listProjects` — when you don't already have a `projectId`.
+
+## Draw it
+
+In the app's agent workspace you have a canvas. When you explain how goals work —
+objectives vs key results, check-ins, or **outcomes versus outputs** — call
+`showCanvasVisual` with `visual: "okr-model"` and then *don't* restate the diagram
+in prose. The outcome/output boundary in particular is the thing prose keeps
+failing at; let the drawing carry it and spend your words on their actual goals.
+
+Not this visual: how a change becomes code is `sdd-delivery`.
