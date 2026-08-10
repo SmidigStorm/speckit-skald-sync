@@ -15,6 +15,11 @@ description: Spec-Driven Development (SDD) in Skald — how requirements are use
 **The requirement is the spec. One PBI is one change.** Everything else
 in this skill unpacks those two sentences.
 
+That is also why Skald's **main flow** runs **backlog item → requirements →
+delivery**: you pick the change, its requirements say what "done" means, and the
+specification is what a team or a coding agent builds from. Strategy, domains and
+research feed that line without sitting in it.
+
 Spec-Driven Development is the practice of treating the *specification*
 — not the code — as the source of truth. When the software is wrong, you
 fix the spec and re-derive, rather than patching code until the spec is
