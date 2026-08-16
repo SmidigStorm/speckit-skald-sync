@@ -96,8 +96,13 @@ of these?* If yes, Entity. If it's an idea about how things work, Term.
 
 ## Building a glossary
 
-For a **discovery session** ("let's model the domain", journey-style),
-seed it before asking anything: read `getExistingProjectVision` and
+A discovery session is Skald's **Map your requirements into domains**
+journey. This skill is how to do the modelling well; how to conduct that
+journey — announcing its shape, drawing the sketch, and why it has no
+progress tracker — is in **skald-journeys**. Load it when one starts.
+
+For such a session ("let's model the domain"), seed it before asking
+anything: read `getExistingProjectVision` and
 `listProjectUsers` first — the top-level areas of the tree usually fall
 straight out of the vision's problem space and the users' goals. Walk
 the product area by area from there.
