@@ -1,6 +1,6 @@
 ---
 name: skald-why
-description: The argument for why Skald exists and what it changes for a product manager — use when someone asks what Skald is for, what makes it different from a backlog tool plus a wiki, why they should move their product into it, or says some version of "I don't see what's new". Also use when a pilot user is unconvinced two weeks in, when writing or reviewing positioning copy, and when an external coding agent needs to understand why the requirements it reads are structured the way they are. Contains the argument, the concrete test that settles it, and the claims that must stay accurate. Not a feature list and not a script.
+description: 'Why Skald exists and what it changes for a product manager — use when someone asks what Skald is for, what makes it different from a backlog tool plus a wiki, why they should move their product into it, or says some version of "I don''t see what''s new". Also when a pilot user is unconvinced two weeks in, when writing or reviewing positioning copy, and when an external coding agent needs to understand why the requirements it reads are structured the way they are. Contains the argument, the concrete test that settles it, and the claims that must stay accurate. Not a feature list and not a script.'
 ---
 
 # Why Skald
