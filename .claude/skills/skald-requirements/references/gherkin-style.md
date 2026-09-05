@@ -38,7 +38,7 @@ The classic beginner mistake is transcribing click-by-click instructions into Gh
 - **Present tense throughout.** `Given` the state *is* established; `When` the actor *does* the action; `Then` the system *shows* the outcome. Avoid "the user will…" / "the user navigated…".
 - **Subject–predicate sentences.** Every step (including `And` lines) names its subject. ❌ "And duplicate names rejected" → ✅ "And the system rejects the duplicate name".
 - **No `Or`.** Gherkin has no `Or` — every step runs in sequence.
-- **No Scenario Outlines in Skald** (house rule). Where classic Gherkin would use a Scenario Outline with an examples table, write **one example per variant on the rule** instead — each variant is its own scenario. Skald's examples are read one at a time on the requirement; an outline's parameter table doesn't render as such and hides which variant matters.
+- **Scenario Outlines are allowed** (house rule flipped by spec 080 — full Gherkin 6). Use one when the *behaviour* is identical and only values differ; the outline body plus its `Examples:` table live in the example's gherkin text. Do NOT use one when behaviour genuinely differs between rows — that is separate scenarios wearing a table as a disguise. Keep tables short; a table with twenty rows is a unit test that escaped.
 - **`Given` = state, not action.** Set up the world with declarative state ("the organisation has a team named Platform"), not by re-driving earlier behaviour.
 
 ## Specific data, defensively chosen
@@ -55,7 +55,20 @@ The classic beginner mistake is transcribing click-by-click instructions into Gh
 
 ## Background
 
-Skald scenarios are written **without `Background`** — each example stands alone so it reads in isolation in the requirement detail. (Cucumber allows `Background`; Skald's convention is to inline the `Given`.)
+Skald supports `Background` at both levels (spec 080 — full Gherkin 6): a requirement's Background applies to all its examples, a rule's Background to that rule's examples. Where both exist, both apply, requirement-level first — Gherkin's own semantics, nothing invented. Store steps only (no `Background:` header line).
+
+**Use a Background when two or more examples under the same parent share the same leading `Given` steps** — repetition there is noise that drifts. A Background for one example is noise of a different kind: inline it instead.
+
+Conventions (adopted verbatim from the Skald-SDD kit's `background-and-outlines.md` — one style guide, not two):
+
+- **`Given` only.** Never a `When`, never a `Then`. Setup, not action, not assertion. (Skald stores whatever you write — validation happens when feature files are generated — so discipline here is the guard.)
+- **Keep it under four lines.** The reader has to hold it in their head while reading every example below it.
+- **Do not set up complicated state.** Use a higher-level step: `Given Ingrid is signed in as an organisation owner`, not six steps constructing that condition.
+- **Make it vivid.** Colourful, specific names telling a small story — `the Platform team`, not `Team A`.
+- **If only some examples need the setup, put it in those examples.** A Background half the examples ignore is misleading — the reader assumes it applies.
+- **Examples must not restate what their Background establishes** — that reintroduces the drift the Background exists to remove.
+
+**Hoisting is the default drafting shape.** When you draft or edit examples that share leading `Given` steps, shape the proposal with the shared setup already extracted into the Background — the one confirmation covers the whole proposal; never ask a separate "may I hoist?" question. Never restructure stored examples you were not asked to touch.
 
 ## One rule → one or more examples
 
@@ -68,7 +81,7 @@ In Example Mapping terms, a **rule** (acceptance criterion) is illustrated by **
 - [ ] Concrete but defensively-chosen data
 - [ ] Title: one line, no conjunctions, no `verify`/`assert`/`should`
 - [ ] Readable by someone who's never seen the feature (Golden Rule)
-- [ ] No `Background`, no `Or`
+- [ ] Shared setup hoisted to the right-level `Background` (2+ examples), no `Or`
 
 ## Sources
 

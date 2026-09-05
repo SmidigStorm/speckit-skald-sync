@@ -7,7 +7,7 @@ description: Standalone Spec-by-Example workshop on one Skald requirement — ru
 Mature ONE requirement outside any feature run (in-feature requirement work belongs to the
 `/speckit-specify` and `/speckit-clarify` syncs). Methodology: follow the
 `skald-requirements` skill — Specification by Example; user-story or EARS title shapes;
-Gherkin scenarios without backgrounds; no solutions in requirements; only the PM decides
+Gherkin scenarios with shared setup hoisted into Backgrounds; no solutions in requirements; only the PM decides
 which open questions get recorded.
 
 ## Flow
@@ -19,7 +19,7 @@ which open questions get recorded.
 2. **Rules**: elicit the agreed behaviours — short, testable statements. `createRules` /
    `updateRule`.
 3. **Examples**: for each rule worth illustrating, concrete Gherkin scenarios
-   (Given/When/Then, no backgrounds, one behaviour each). `createExamples` / `updateExample`.
+   (Given/When/Then, shared Given steps hoisted to the requirement or rule Background, one behaviour each). `createExamples` / `updateExample`.
 4. **Open questions**: things the workshop can't settle — propose recording them; the PM
    decides what's worth keeping. `createOpenQuestions`; resolve stale ones with
    `answerOpenQuestion` / `dismissOpenQuestion` as the discussion lands.
