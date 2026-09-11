@@ -23,8 +23,10 @@ surfaces (in-app Skald Agent and Skald MCP server) per Constitution V
   single-PBI read incl. description, linked requirements, and the
   assigned release (`releaseId` + `releaseName`). Use to confirm a
   release assignment after `updateBacklogItem({ releaseId })`.
-- **`getTeams({ projectId })`** — every team that can own a PBI in
-  this project.
+- **`getTeams({ projectId })`** — this project's teams: the only ones
+  that can own its PBIs and risks. A team belongs to exactly one project
+  (PB-187), so never offer a team from another project; a team id from
+  another project is refused by `updateBacklogItem`.
 - **`listReleases({ projectId, includeArchived? })`** — every release
   in the project with `id`, `name`, `status`
   (Planned/In Progress/Released), `targetDate`, `archived`, and how many
