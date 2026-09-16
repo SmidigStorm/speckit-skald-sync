@@ -20,18 +20,36 @@ compensating for scattered information is doing skilled work in a bad system.
 
 ## The shift
 
-**Your developers can build faster than you can specify. That is the new constraint, and
-it is yours.**
+**An unambiguous requirement always mattered. What changed is who catches the ambiguous
+one.**
 
-AI took the slow part out of building. What it cannot do is decide what to build, or know
-what "right" means — so the work that decides both moved onto the critical path. The teams
-pulling ahead are the ones whose product manager can hand an agent a specification precise
-enough to build from. That is **spec-driven development**, and it is becoming how software
-gets made.
+A developer reading a vague ticket stopped and asked. That pause was the safeguard, and
+nobody designed it — it was a person noticing something was off. A coding agent does not
+pause. It builds the vague version, confidently and fast, and the human reviewer who is
+still there for every merge is now the queue everything waits in. Ambiguity used to cost a
+conversation. Now it ships.
 
-The gap compounds. A PM who writes ticket descriptions gets rounds of clarification; a PM
-who writes rules and examples gets working software. Every delivery makes the next one
-faster — or it doesn't.
+So the check has to move upstream, into the requirement itself: rules and worked examples
+concrete enough that two reasonable developers, or two agents, could not build different
+things from them. That is what Skald holds, and the assistant conducts the argument that
+produces it — the example-mapping workshop where you find out what you knew and had not
+said — then helps split the result into work items a team can take. The written record is
+the by-product of that argument, not a substitute for it.
+
+**The requirement is not the only thing, and it is not the PM's only job.** A requirement
+that only the PM can read is a requirement the PM has to carry — to the developer, the
+tester, the designer, the leadership, the coding agent — and that carrying is most of a
+product manager's day. Skald stores one model that all of them read in the same shape, so
+the PM stops transmitting and gets to decide instead. Delegation follows from
+it: a work item hands a team a requirement they can read without the PM in the room.
+
+**Work items pass through. Requirements stay.** A work item is finished, and then it is
+gone — closed, archived, forgotten with the sprint that held it. The requirement it
+realised is still true of the product the day after and the year after, and the next
+change reads it before it starts. A backlog tool treats the two as one kind of thing and
+throws the durable one away with the disposable one. Skald keeps them apart, and links
+them: the work item points at the requirement it implements, and the requirement outlives
+every work item that ever touched it. Archived means kept; nothing here is deleted.
 
 ## The test
 
@@ -119,13 +137,15 @@ transmitting what already is.
 
 ## The frame — only for comparative questions
 
-If they ask "why now" or "why didn't this exist before": AI moved the constraint. Writing
-code got dramatically faster, so the bottleneck moved upstream to knowing what to build
-and being able to say it precisely. Tools built when coding was the constraint optimise
-the wrong end — and a coding agent is only as good as the specification it is given,
-which makes the quality and the addressability of that specification the new limit.
+If they ask "why now" or "why didn't this exist before": AI moved the constraint. Your
+developers can now build faster than you can specify, so the bottleneck moved upstream to
+knowing what to build and being able to say it precisely. Tools built when coding was the
+constraint optimise the wrong end — and a coding agent is only as good as the
+specification it is given, which makes the quality and the addressability of that
+specification the new limit.
 
 Do not lead with this. It is true, it is everywhere, and it sounds like everyone else.
+The safeguard argument above is the one that is ours.
 
 ## Accuracy guardrails
 
@@ -135,3 +155,42 @@ Do not lead with this. It is true, it is everywhere, and it sounds like everyone
 - Everything above is true of Skald today. Do not extend it with roadmap.
 - If they disagree, do not add claims. Go back to the test — it is checkable, and an
   argument they can check beats one they have to accept.
+
+## Where this comes from
+
+For when someone asks whether the safeguard claim is a story or a measurement. Cite, do
+not recite; none of these numbers belong in Skald's own copy.
+
+- **The reviewer is now the queue.** Faros AI Engineering Report (Apr 2026, 22,000
+  developers): under high AI adoption, bugs per developer +54%, incidents per PR +243%,
+  median time in review +441%, and 31% more PRs merged with no review at all —
+  "regardless of baseline engineering maturity". DORA's 2026 ROI report calls the same
+  thing the "verification tax". Every frontier company that writes it up (Stripe, Shopify,
+  Coinbase, Anthropic) still puts a human on every merge; the safeguard did not vanish, it
+  drowned.
+- **Without user focus, AI makes a team worse.** DORA 2025 AI Capabilities Model: teams
+  with user-centric focus see amplified benefit; teams without it see the sign flip. A
+  measured interaction, not a slogan.
+- **Inspection versus quality built in.** Deming: a reviewer who stops the merge is
+  inspection; a standard the agent works inside is quality built in. Toyota's jidoka needs
+  a sensor that can detect the fault — without one there is no stop, only unsupervised
+  automation. A requirement with rules and examples is the sensor.
+- **Agents execute the wrong intent confidently.** Bungay's three gaps, applied: AI shrinks
+  the knowledge gap, widens the alignment gap and leaves the effects gap. Meta's Project
+  OT is the effects gap in one line — code changes +220%, features reaching users +36%,
+  incidents +40%. Piro: "Instructions tell an agent what to do in the situation the
+  designer anticipated. Intent tells an agent what to do in the situation nobody
+  anticipated."
+- **The argument, not the document.** Brodzinski warns a detailed spec "creates the
+  illusion that a feature has been thought through" and discourages the conversation
+  Conway's law depends on. Example mapping is the answer: the argument is where you find
+  out what you knew but had not said, and the Gherkin is its by-product. That is why the
+  assistant conducts the workshop rather than generating the file.
+- **Why requirements outlive work items.** Naur, *Programming as Theory Building*: a
+  program dies when the team holding its theory dissolves, and revival from documentation
+  alone is impossible. With agents, every session is a new programmer; the requirement
+  record is the only thing that survives the session.
+- **Do not rebuild Taylor's planning office.** Shifting the check left is Taylorism if a
+  separate department writes specifications that agents execute. Skald is flat within an
+  organization and has no roles; the requirement is written with the people who build it,
+  one change at a time, not a year's plan.
