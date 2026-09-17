@@ -20,7 +20,12 @@ In Skald's Spec-Driven Development model, **the requirement is the spec** — th
 
 Each requirement is one row in the `requirements` table with:
 
-- **Title** — one User Story or one EARS sentence.
+- **Title** — the capability, in the reader's words. Short: a noun phrase or an imperative
+  (*Create a requirement*, *Export the requirements list*). **Not the user story** — that is the
+  first line of the description. CRUD capabilities take the CRUD verb, and never "Delete".
+- **Description** — the user story (or the EARS sentence) on its first line, then the narrative:
+  what the capability is for, why it is shaped this way, and the one fact likely to surprise
+  somebody.
 - **Type** — `User Story` (default for user-facing capabilities) or `EARS` (system requirements).
 - **Priority** — MoSCoW: Must / Should / Could / Won't.
 - **Domain** — the Skald domain the requirement lives under.
@@ -29,6 +34,10 @@ Each requirement is one row in the `requirements` table with:
 - **Open Questions** — unresolved things blocking refinement.
 
 Rules and Examples live in their own tables but always belong to a requirement. Open Questions too.
+
+**How to write all of it — titles, stories, narratives, rules, and the writing tells to strike
+out**: [`references/writing-style.md`](references/writing-style.md). Read it before authoring or
+rewording a requirement.
 
 ## Requirement vs Rule — don't over-split
 
@@ -103,7 +112,9 @@ instrument:
 
 - **Many questions** → too uncertain to build; propose chasing answers
   before formalising.
-- **Many rules** → the story is too big; route to INVEST splitting.
+- **Many rules** → look for a seam: two capabilities a user would ask
+  for separately. If there is one, route to INVEST splitting; if not,
+  the story is whole — keep it.
 - **A tidy map, an example per rule, few questions** → ready to
   formalise and write.
 - **It drags on** — a well-understood story maps quickly (canonically

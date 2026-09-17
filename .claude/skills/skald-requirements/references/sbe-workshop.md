@@ -108,9 +108,10 @@ The map is a readiness instrument — read it before writing anything:
 - **Covered in red** (many questions) → too uncertain to build. Propose
   chasing the answers before formalising; recording the questions in
   Skald *is* the deliverable of this session.
-- **Covered in blue** (many rules) → the story is too big. Route to
-  INVEST splitting (`invest-splitting.md`); the rules themselves are
-  natural fault lines to split along.
+- **Covered in blue** (many rules) → look for a seam: two capabilities a
+  user would ask for separately. If there is one, route to INVEST
+  splitting (`invest-splitting.md`) and split along it. If there is not,
+  the story is whole — many rules on one capability is not a defect.
 - **A tidy map** — a handful of rules, an example per rule, few or no
   questions → ready. Formalise the examples and propose the writes.
 - **The session drags** — a well-understood story maps in roughly 25
