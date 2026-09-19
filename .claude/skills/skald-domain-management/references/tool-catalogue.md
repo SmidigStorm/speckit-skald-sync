@@ -19,10 +19,13 @@ Constitution V (Agent–MCP parity).
   before proposing any rename or restructure** so the PM sees the blast
   radius.
 
-## Write tools (confirmation discipline applies)
+## Write tools (Writing rules apply)
 
-Every call is preceded by a plain-language summary (a proposal) and the
-PM's go-ahead. One confirmation covers the whole proposal it answers.
+A write the PM asked for happens straight away, followed by a summary of
+what was written. Propose first, and write only after a go-ahead, for
+content you drafted rather than the PM, or an archive, restore or
+destructive write (the skill's
+Writing section).
 
 ### Domains
 

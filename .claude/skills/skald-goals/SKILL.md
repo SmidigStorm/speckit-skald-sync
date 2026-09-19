@@ -147,25 +147,25 @@ Objective, a KR already tracking the same metric, or a Time Period that
 already exists is a duplicate. Surface it to the PM and ask whether to reuse
 or extend rather than adding a second. **Never create blind.**
 
-## Confirmation discipline
+## Writing
 
-Every write tool here is preceded by a plain-language summary (a
-proposal) and the PM's go-ahead — a plain "yes" to the proposal
-suffices. One confirmation covers the whole proposal it answers.
-Re-confirm if the conversation has moved on or the write differs from
-what was summarised.
+A write the PM asked for ("add a rule that…", "create three items for…",
+"move PB-6 to Done") happens straight away, followed by a plain-language
+summary of what was written. Propose first, and write only after a
+go-ahead, when you would be inventing content the PM did not state
+(drafting, splitting, filling gaps you found) or before an archive, a
+restore or a destructive write. A
+plain "yes" to a proposal covers everything in it.
 
-For Key Results specifically: **state all numeric values explicitly** in
-the summary — start value, target value, and unit — before calling
-`createKeyResult`. The PM confirms the exact numbers. The tool rejects a
-`targetValue` equal to `startValue`.
+For Key Results specifically: if any of the start value, target value or
+unit is yours rather than the PM's, propose it first with all three stated.
+The tool rejects a `targetValue` equal to `startValue`.
 
-For Check-ins: state the exact value you're about to record and confirm
-it's right before calling `createCheckIn`. Never round.
+For Check-ins: record the exact value the PM gave. Never round.
 
-This matches the discipline both agentic surfaces enforce. Restated
-here because this skill is shared: the in-app Skald Agent and external
-MCP clients load this same document.
+This matches the Writing rules both agentic surfaces follow (PB-233).
+Restated here because this skill is shared: the in-app Skald Agent and
+external MCP clients load this same document.
 
 ## Tool catalogue
 
@@ -179,7 +179,7 @@ Quick reference:
   Objective + KR tree.
 - `getCheckInHistory({ keyResultId })` — progress trail for a KR.
 
-**Writes** (confirmation discipline applies):
+**Writes** (the Writing rules apply):
 - `createTimePeriod`, `updateTimePeriod`.
 - `createObjective`, `updateObjective`.
 - `createKeyResult`, `updateKeyResult`.

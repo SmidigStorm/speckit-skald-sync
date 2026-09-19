@@ -21,7 +21,7 @@ next steps — each one routed to the skill that does the work.
 **The health check is read-only.** It diagnoses and points; it never writes. Every
 recommendation ends with a hand-off to the domain where the work happens
 (strategy, domain modelling, requirements, planning, goals, delivery),
-and the doing-work there carries its own confirmation discipline.
+and the doing-work there carries its own Writing rules.
 
 ## How the health check works
 

@@ -34,7 +34,7 @@ state of the product before proposing changes.
 
 These don't return requirement data, but you usually want them to write
 a *good* requirement. Use them in the read-before-write step of the
-confirmation discipline.
+Writing rules.
 
 - **`listDomains({ projectId })`** — pick the right home domain. A
   requirement that lives under the wrong domain confuses everyone.
@@ -47,12 +47,13 @@ confirmation discipline.
 - **`listPbis({ projectId })`** — check whether an existing PBI already
   covers this capability before drafting a new requirement.
 
-## Write tools (confirmation discipline applies)
+## Write tools (Writing rules apply)
 
-Every call here is preceded by a plain-language summary (a proposal) and
-the PM's go-ahead. One confirmation covers the whole proposal it answers.
-If the conversation has moved on between the summary and the call, or the
-write differs from what was summarised, re-confirm.
+A write the PM asked for happens straight away, followed by a summary of
+what was written. Propose first, and write only after a go-ahead, for
+content you drafted rather than the PM, or an archive, restore or
+destructive write (the skill's
+Writing section).
 
 ### The requirement itself
 

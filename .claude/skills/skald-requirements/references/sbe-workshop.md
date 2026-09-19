@@ -134,7 +134,7 @@ If the agent is doing a workshop end-to-end, this means one
 `createRequirements` call, one batched `createRules` call, one batched
 `createExamples` call per rule, and a final batched
 `createOpenQuestions` call if any were chosen. Each write is preceded
-by a plain-language proposal — see the confirmation discipline in the
+by a plain-language proposal — see the Writing rules in the
 main `SKILL.md`.
 
 ## A worked example

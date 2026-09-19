@@ -152,20 +152,22 @@ name/scope already exists, or a term already present in the target domain,
 is a duplicate. Surface it to the PM and ask whether to reuse or extend
 rather than adding a second. **Never create blind.**
 
-## Confirmation discipline
+## Writing
 
-Every write tool here is preceded by a plain-language summary (a
-proposal) and the PM's go-ahead — a plain "yes" to the proposal
-suffices. One confirmation covers the whole proposal it answers.
-Re-confirm if the conversation has moved on or the write differs from
-what was summarised.
+A write the PM asked for ("add a rule that…", "create three items for…",
+"move PB-6 to Done") happens straight away, followed by a plain-language
+summary of what was written. Propose first, and write only after a
+go-ahead, when you would be inventing content the PM did not state
+(drafting, splitting, filling gaps you found) or before an archive, a
+restore or a destructive write. A
+plain "yes" to a proposal covers everything in it.
 
 For domain renames / restructures specifically: run `getDomainImpact`
 first and include the impact counts in the summary.
 
-This matches the discipline both agentic surfaces enforce. Restated
-here because this skill is shared: the in-app Skald Agent and external
-MCP clients load this same document.
+This matches the Writing rules both agentic surfaces follow (PB-233).
+Restated here because this skill is shared: the in-app Skald Agent and
+external MCP clients load this same document.
 
 ## Tool catalogue
 
@@ -181,7 +183,7 @@ Quick reference:
 - `getDomainImpact({ projectId, domainId })` — child + requirement
   counts; run before any rename/restructure.
 
-**Writes** (confirmation discipline applies):
+**Writes** (the Writing rules apply):
 - `createDomain({ projectId, name, parentId?, description? })` — omit
   `parentId` for a top-level domain. Rejects a child under a depth-2
   parent.

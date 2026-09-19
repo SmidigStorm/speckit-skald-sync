@@ -243,22 +243,27 @@ A requirement carries a status that records **how settled it is** — a signal, 
 - **Deprecated** — the intent was dropped. Different from archiving, which just hides it.
 - **Delivered** — built and live.
 
-`updateRequirement` is the only lever, and a status change is a **write** — so **you propose, the PM moves it**, under the normal confirmation gate. Never flip a status silently. When you judge a requirement has reached Approved quality, say *why* (rules present, examples cover them, nothing blocking) and ask. Status matters downstream: a backlog item is not really understood while a requirement behind it is still an unrefined Draft — see "Is a backlog item ready to build?" in the skald-planning skill.
+`updateRequirement` is the only lever, and a status change is a **write** — so **you propose, the PM moves it**, under the Writing rules. Never flip a status silently. When you judge a requirement has reached Approved quality, say *why* (rules present, examples cover them, nothing blocking) and ask. Status matters downstream: a backlog item is not really understood while a requirement behind it is still an unrefined Draft — see "Is a backlog item ready to build?" in the skald-planning skill.
 
 ## Check for duplicates before creating
 
 Before creating a requirement, read what already exists — `getExistingRequirements` (and `listPbis` for the PBI side). A capability already specced under a near-identical title, or already covered by an existing PBI, is a duplicate. Surface the match to the PM and ask whether to extend the existing artifact or genuinely add a new one. **Never create blind.** If a duplicate is found after the fact, reconcile rather than leaving two live copies — fold the rules/examples into the survivor and retire the loser.
 
-## Confirmation discipline
+## Writing
 
-This applies to every write tool you call:
+A write the PM asked for ("add a rule that…", "create three items for…",
+"move PB-6 to Done") happens straight away, followed by a plain-language
+summary of what was written. Propose first, and write only after a
+go-ahead, when you would be inventing content the PM did not state
+(drafting, splitting, filling gaps you found) or before an archive, a
+restore or a destructive write. A
+plain "yes" to a proposal covers everything in it.
 
-1. Summarise the intended change in plain language (a proposal). Include the requirement's title, type, priority, and domain.
-2. Wait for the PM's go-ahead — a plain "yes" to the proposal suffices.
-3. Write everything the confirmed proposal covers — no fresh "yes" per item.
-4. Re-confirm if the conversation has moved on or the write differs from what was summarised.
+The summary names the requirement's title, type, priority, and domain.
 
-This is the same discipline both agentic surfaces enforce. Restated here because this skill is shared: the in-app Skald Agent and external MCP clients load this same document.
+This matches the Writing rules both agentic surfaces follow (PB-233).
+Restated here because this skill is shared: the in-app Skald Agent and
+external MCP clients load this same document.
 
 ## Tool catalogue
 
@@ -272,7 +277,7 @@ Quick reference — the tools you'll reach for most:
 - `getRequirementForSplit({ id })` — pre-flight before `splitRequirement`.
 - `listRules({ requirementId })`, `listExamples({ requirementId })`, `listOpenQuestions({ requirementId })`.
 
-**Writes** (confirmation discipline applies):
+**Writes** (the Writing rules apply):
 - `createRequirements`, `updateRequirement`.
 - `splitRequirement`.
 - `archiveRequirement`, `restoreRequirement` — archive is the destructive verb (there is **no delete**); archiving cascade-archives the requirement's rules/examples/open-questions and removes it from active lists, the bin, and search, while preserving PBI links. `restoreRequirement` brings it (and its children) back; resolve the archived requirement via `listRequirements({ includeArchived: true })`.

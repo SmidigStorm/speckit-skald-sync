@@ -78,7 +78,7 @@ specs deny this. Skald's answer: **learnings write back, in flight.**
 When delivery surfaces a clarification, a missing rule, a wrong
 example, or a new question, the change lands **in the Skald
 requirement** — via the normal update tools, under the normal
-confirmation discipline — not as an untracked edit to a derived spec
+Writing rules — not as an untracked edit to a derived spec
 file. The living truth stays true *while* the build teaches you things.
 
 (Today write-backs are in-place edits. A future model may stage them as
@@ -113,7 +113,7 @@ tool) to Skald — point the PM at the **Coding agents** page in the app
 1. **The Skald MCP server** — gives the developer's agent the same
    project-scoped tools this surface has (read requirements and rules,
    raise open questions, propose status changes), under the same
-   confirmation discipline. This is how the derived spec stays connected
+   Writing rules. This is how the derived spec stays connected
    to the living one during a build.
 2. **The `speckit-skald-sync` preset** — a public GitHub repo
    (`SmidigStorm/speckit-skald-sync`) the developer installs into their

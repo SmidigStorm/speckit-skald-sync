@@ -53,12 +53,13 @@ surfaces (in-app Skald Agent and Skald MCP server) per Constitution V
   the PBI might support. The PM may want to link via
   `linkKeyResultToBacklogItem`.
 
-## Write tools (confirmation discipline applies)
+## Write tools (Writing rules apply)
 
-Every call here is preceded by a plain-language summary (a proposal) and
-the PM's go-ahead. One confirmation covers the whole proposal it answers.
-If the conversation has moved on between the summary and the call, or the
-write differs from what was summarised, re-confirm.
+A write the PM asked for happens straight away, followed by a summary of
+what was written. Propose first, and write only after a go-ahead, for
+content you drafted rather than the PM, or an archive, restore or
+destructive write (the skill's
+Writing section).
 
 ### The PBI itself
 

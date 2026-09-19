@@ -116,9 +116,10 @@ the template prose, drafting tips, and a worked example.
   read the Vision and then say "this seems stale, want me to refresh
   it?". That's the PM's call.
 
-### Confirmation discipline for Vision
+### Proposing a Vision
 
-Vision writes replace the entire body. Before calling `setProjectVision`:
+Vision writes replace the entire body. Unless the PM dictated the body
+word for word, before calling `setProjectVision`:
 
 1. Show the full new Markdown body in the proposal — not just a
    description of the change. The PM is replacing existing content, so
@@ -185,7 +186,7 @@ parity).
 - `listProjectUsers({ projectId })` — every user row, alphabetical by
   name.
 
-**Writes** (confirmation discipline applies):
+**Writes** (the Writing rules apply):
 - `setProjectVision({ projectId, markdownBody })` — idempotent UPSERT.
   Pass an empty string to clear.
 - `clearProjectVision({ projectId })` — explicit clear; equivalent to
@@ -206,17 +207,19 @@ parity).
   offering to continue there.
 - `listProjects()` — when you don't already have a `projectId`.
 
-## Confirmation discipline (restated)
+## Writing (restated)
 
-Every write tool here is preceded by a plain-language summary (a
-proposal) and the PM's go-ahead — a plain "yes" to the proposal
-suffices. One confirmation covers the whole proposal it answers.
-Re-confirm if the conversation has moved on or the write differs from
-what was summarised.
+A write the PM asked for ("add a rule that…", "create three items for…",
+"move PB-6 to Done") happens straight away, followed by a plain-language
+summary of what was written. Propose first, and write only after a
+go-ahead, when you would be inventing content the PM did not state
+(drafting, splitting, filling gaps you found) or before an archive, a
+restore or a destructive write. A
+plain "yes" to a proposal covers everything in it.
 
-For `setProjectVision` specifically: show the full proposed body in the
-summary, not just a description. The PM is replacing content; they need
-to see what's going in.
+For `setProjectVision` specifically: when you drafted the body, propose
+it in full, not a description of it. The PM is replacing content; they
+need to see what's going in.
 
 ## Draw it
 

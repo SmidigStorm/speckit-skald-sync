@@ -156,7 +156,7 @@ releases"): read the backlog with its requirement links, then
 3. **Suggest an order, never decide it** — sequencing across releases
    is prioritisation, and prioritisation is PM-only.
 4. One confirmation can cover a whole proposed bundle (create the
-   release + assign its items), per the confirmation discipline.
+   release + assign its items), per the Writing rules.
 
 > **Do not** set the legacy free-text `release` field to assign a
 > release. It is deprecated, is not the `release_id` FK, and does **not**
@@ -272,22 +272,22 @@ duplicate slips through, reconcile with the repo's merge convention: rename
 the superseded item `[MERGED → PB-NN]` and move it to Done, keeping the
 linked/specced item as the survivor (see PB-28/29/30 for the shape).
 
-## Confirmation discipline
+## Writing
 
-This applies to every write tool you call:
+A write the PM asked for ("add a rule that…", "create three items for…",
+"move PB-6 to Done") happens straight away, followed by a plain-language
+summary of what was written. Propose first, and write only after a
+go-ahead, when you would be inventing content the PM did not state
+(drafting, splitting, filling gaps you found) or before an archive, a
+restore or a destructive write. A
+plain "yes" to a proposal covers everything in it.
 
-1. Summarise the intended change in plain language (a proposal).
-   Include the PBI title, type, status, and any other touched fields
-   (estimate, team, release, linked requirements).
-2. Wait for the PM's go-ahead — a plain "yes" to the proposal suffices.
-3. Write everything the confirmed proposal covers — no fresh "yes"
-   per item.
-4. Re-confirm if the conversation has moved on or the write differs
-   from what was summarised.
+The summary names the PBI title, type, status, and any other touched
+fields (estimate, team, release, linked requirements).
 
-This matches the discipline both agentic surfaces enforce. Restated
-here because this skill is shared: the in-app Skald Agent and external
-MCP clients load this same document.
+This matches the Writing rules both agentic surfaces follow (PB-233).
+Restated here because this skill is shared: the in-app Skald Agent and
+external MCP clients load this same document.
 
 ## Tool catalogue
 
@@ -310,7 +310,7 @@ Quick reference — the tools you'll reach for most:
 - `listReleases({ projectId })` — releases + their UUIDs; resolve a
   release name before assigning a PBI to it.
 
-**Writes** (confirmation discipline applies):
+**Writes** (the Writing rules apply):
 - `createBacklogItems` — create one or more PBIs.
 - `updateBacklogItem` — title, description, status, estimate, team,
   `releaseId` (first-class release assignment), sortOrder.
