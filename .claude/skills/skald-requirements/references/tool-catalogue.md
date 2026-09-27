@@ -29,6 +29,12 @@ state of the product before proposing changes.
 - **`getRequirementForSplit({ id })`** — pre-flight read before
   `splitRequirement`. Returns the rules, examples, and open questions
   so you can plan how they should land on the new requirements.
+- **`getRequirementAsFeatureFile({ projectId, displayId })`** — one
+  requirement as a plain-text Gherkin feature file: its rules and
+  examples, open and answered questions, and the backlog items planned
+  from it. Exactly the text a member copies from Skald, so hand this to a
+  coding agent rather than reassembling the parts. Refuses an archived
+  requirement as archived (PB-271).
 
 ### Adjacent reads worth doing before a write
 
