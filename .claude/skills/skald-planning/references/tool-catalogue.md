@@ -70,7 +70,7 @@ Writing section).
   Default `status` is Refining Requirements.
 - **`updateBacklogItem({ projectId, id, ... })`** — change title,
   description, status, estimate, `type` (Feature/Bug/Refactor/Spike),
-  team, `sortOrder`, or `releaseId`. Status and type changes
+  team, or `releaseId`. Status and type changes
   are write operations: the agent proposes, the PM confirms, the agent
   calls the tool. **`releaseId`** is the first-class release assignment
   (resolve the UUID via `listReleases`): a UUID assigns/moves the item
@@ -79,6 +79,14 @@ Writing section).
   project (the tool verifies this). It is the **only** way to set a
   PBI's release — the legacy free-text `release` label was retired
   (spec 045).
+- **`moveBacklogItem({ projectId, id, position })`** — move one PBI to a
+  position in its project's backlog and renumber the rest. `position` is
+  1-based over the project's **active** items, so `1` is the top of the
+  backlog; a position past the end is rejected rather than clamped.
+  `listPbis` returns the backlog in its current order, so read it first:
+  the position you want is that item's place in the list. Returns the
+  resulting order, so you can restate the move. The backlog's order is
+  the PM's call — move an item only when the PM asked for it.
 
 ### Releases
 

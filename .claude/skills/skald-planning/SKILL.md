@@ -112,9 +112,11 @@ without an explicit request.
 
 You may surface things that look out of order ("this PBI is below this
 one, but it's a Must-have requirement; want to reconsider?"), but you
-don't move them. `updateBacklogItem` with a new `sortOrder` is a write
-that requires the same plain-language summary + explicit confirmation
-as any other write — and the PM is the one who decides.
+don't move them. `moveBacklogItem({ projectId, id, position })` is the
+write that moves one — `position` is 1-based over the project's active
+backlog, so 1 is the top — and it requires the same plain-language
+summary + explicit confirmation as any other write. The PM is the one
+who decides.
 
 ## Releases: stakeholder-facing bundles
 
@@ -313,7 +315,9 @@ Quick reference — the tools you'll reach for most:
 **Writes** (the Writing rules apply):
 - `createBacklogItems` — create one or more PBIs.
 - `updateBacklogItem` — title, description, status, estimate, team,
-  `releaseId` (first-class release assignment), sortOrder.
+  `releaseId` (first-class release assignment).
+- `moveBacklogItem` — move one PBI to a position in the project's
+  backlog. Order is the PM's call (Prioritisation above).
 - `createReleases`, `updateRelease` — create / rename / retarget /
   archive a release.
 - `archiveBacklogItem`, `restoreBacklogItem` — archive is the destructive
