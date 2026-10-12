@@ -1,6 +1,7 @@
 ---
 name: skald-health-check
 description: 'Your Skald health check — what to do next in a product. Read-only scan across every layer (Vision, Users, Domains, Glossary, Requirements with rules and examples, Backlog Items with linkage and sizing, Goals/OKRs, UX research), an opinionated view of what is missing or weak, and one to five concrete next steps routed to strategy, domains & glossary, requirements, planning, goals or delivery. Never writes — diagnoses and hands off. Use whenever the user asks what to do next, where to start, what is missing, or how healthy the product is — even if they don''t say "Skald". Also trigger on "what''s next", "where do I start", "what should I work on", "what''s missing", "is this product in good shape", "give me a health check", "I don''t know what to do", or at the start of working in a product when direction is unclear.'
+user-invocable: true
 ---
 
 # Skald Health Check
