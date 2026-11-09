@@ -1,7 +1,7 @@
 ---
 name: skald-planning
 description: 'How to create, refine, split, estimate, prioritise and link Product Backlog Items (PBIs) in Skald. Covers PBI types (Feature / Bug / Refactor / Spike) and title shapes, S/M/L/XL sizing calibrated for AI-assisted delivery, the variable PBI↔requirement relationship, backlog refinement, the user-perspective splitting heuristic, release bundling, status transitions (the agent proposes; the PM moves), and the PM-only prioritisation rule. Use whenever the user is creating, editing, splitting, sizing, prioritising, releasing or refining a PBI — even if they don''t say "Skald". Also trigger on "create a backlog item", "add to the backlog", "refine this PBI", "what should we work on next", "size this", "estimate this", "link this PBI to a requirement", "what release does this belong in", "split this", or any Skald planning tool call (createBacklogItems, updateBacklogItem, listPbis, getTeams).'
-user-invocable: true
+user-invocable: false
 ---
 
 # Skald Planning

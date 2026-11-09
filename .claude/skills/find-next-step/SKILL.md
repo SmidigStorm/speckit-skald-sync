@@ -1,10 +1,19 @@
 ---
-name: skald-health-check
-description: 'Your Skald health check — what to do next in a product. Read-only scan across every layer (Vision, Users, Domains, Glossary, Requirements with rules and examples, Backlog Items with linkage and sizing, Goals/OKRs, UX research), an opinionated view of what is missing or weak, and one to five concrete next steps routed to strategy, domains & glossary, requirements, planning, goals or delivery. Never writes — diagnoses and hands off. Use whenever the user asks what to do next, where to start, what is missing, or how healthy the product is — even if they don''t say "Skald". Also trigger on "what''s next", "where do I start", "what should I work on", "what''s missing", "is this product in good shape", "give me a health check", "I don''t know what to do", or at the start of working in a product when direction is unclear.'
+name: find-next-step
+description: 'Find the next step: a read-only scan across the whole product — vision, users, domains, glossary, requirements, backlog, goals, research — and one to five concrete next steps, each routed to the activity that does it. Use when the member asks what to do next, where to start, what is missing, or how healthy the product is.'
 user-invocable: true
+metadata:
+  declares: []
 ---
+# Find the next step
 
-# Skald Health Check
+This is an **activity** (`/find-next-step`). A member calls it from the "/" list, the start screen, Getting started or a button; the words after the command are its arguments. When it is called, this document is already in the conversation: do not load it again.
+
+**Route each next step to the activity that does it** (`/define-vision`, `/map-domains`, `/define-change`, `/set-goals`, `/plan-releases`, `/capture-research`), naming it so the member can call it.
+
+
+**It opens no views.**
+
 
 > **This is reference for you, not a script to read out.** The user asked a
 > question, not for the manual. Answer it in a few points — three to five, the

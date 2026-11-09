@@ -144,7 +144,7 @@ questions and learnings flow back into the living spec.
   sake.
 - **Route, don't absorb.** The crafts live in their own skills:
   authoring specs → skald-requirements; sizing, splitting, readiness →
-  skald-planning; what to work on next → skald-health-check. This skill
+  skald-planning; what to work on next → find-next-step. This skill
   is the map of how they connect to delivery.
 
 ## Anti-patterns, by name

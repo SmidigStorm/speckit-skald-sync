@@ -1,7 +1,7 @@
 ---
 name: skald-domain-management
 description: 'How to model a product''s domain in Skald — the domain hierarchy, and the ubiquitous language as Entities, Processes and Terms. DDD-inspired but simpler: a clear tree of domains, each holding the glossary it owns. Covers the 3-level depth cap, when to nest vs keep flat, Entity/Process/Term classification, term aliases, per-domain title uniqueness, reparenting, and domain-impact checks before renames or moves. Use whenever the user is creating or organising domains, building a glossary, classifying a term, deciding where a term or requirement belongs, or restructuring the domain tree — even if they don''t say "Skald". Also trigger on "create a domain", "model my domains", "add a domain", "model this area", "what''s the ubiquitous language", "is this an entity or a process", "where does this term go", "move this domain", "rename this bounded context", or any Skald domain tool call (createDomain, updateDomain, listDomains, getDomainImpact, term tools).'
-user-invocable: true
+user-invocable: false
 ---
 
 # Skald Domain Management
@@ -100,7 +100,7 @@ of these?* If yes, Entity. If it's an idea about how things work, Term.
 A discovery session is Skald's **Map your requirements into domains**
 journey. This skill is how to do the modelling well; how to conduct that
 journey — announcing its shape, drawing the sketch, and why it has no
-progress tracker — is in **skald-journeys**. Load it when one starts.
+progress tracker — is in the **map-domains** and **define-change** activities. Load the one that applies when it starts.
 
 For such a session ("let's model the domain"), seed it before asking
 anything: read `getExistingProjectVision` and

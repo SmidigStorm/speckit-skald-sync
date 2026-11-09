@@ -1,10 +1,16 @@
 ---
-name: skald-why
-description: 'Why Skald exists and what it changes for a product manager — use when someone asks what Skald is for, what makes it different from a backlog tool plus a wiki, why they should move their product into it, or says some version of "I don''t see what''s new". Also when a pilot user is unconvinced two weeks in, when writing or reviewing positioning copy, and when an external coding agent needs to understand why the requirements it reads are structured the way they are. Contains the argument, the concrete test that settles it, and the claims that must stay accurate. Not a feature list and not a script.'
+name: learn-skald
+description: 'Learn Skald: why Skald exists and what it changes for a product manager, beside the Getting started page. Use when the member asks what Skald is for, what makes it different from a backlog tool plus a wiki, or says some version of "I don''t see what''s new".'
 user-invocable: true
+metadata:
+  declares: []
 ---
+# Learn Skald
 
-# Why Skald
+This is an **activity** (`/learn-skald`). A member calls it from the "/" list, the start screen, Getting started or a button; the words after the command are its arguments. When it is called, this document is already in the conversation: do not load it again.
+
+**Its views.** Getting started (`getting-started`). If they are not in the `<open-tabs>` note, offer them with `core_openWorkbenchTab` (one offer row under your reply); never open anything yourself.
+
 
 This is reference for you, not a script to read out. Take the part that answers what was
 actually asked. If they have asked something broad, give the one-line version and then

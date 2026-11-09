@@ -17,7 +17,7 @@ move as one. **One Skald backlog item (PBI) = one Spec Kit feature**: the PBI's 
 
 The `skald-*` methodology skills the commands reference are **included in this repo** under
 [`.claude/skills/`](.claude/skills) — `skald-strategy`, `skald-requirements`, `skald-planning`,
-`skald-goals`, `skald-domain-management`, `skald-health-check`, `skald-sdd`, and `skald-why`.
+`skald-goals`, `skald-domain-management`, `skald-sdd`, `find-next-step`, and `learn-skald`.
 These are the **single source of truth**, published straight from the Skald app (the same files
 the in-app agent loads); this mirror is regenerated on every change.
 
