@@ -103,8 +103,9 @@ Writing section).
 
 ### Linkage
 
-- **`linkRequirementToBacklogItem({ projectId, requirementId, backlogItemId })`**
-  — attach a requirement to a PBI. Many-to-many; one PBI can implement
+- **`linkRequirementsToBacklogItem({ projectId, backlogItem: "PB-12", requirements: ["REQ-42", …] })`**
+  — attach one or more requirements to a work item, all or nothing; one
+  already linked counts as done. Many-to-many; one PBI can implement
   several requirements and one requirement can be delivered across
   several PBIs.
 - **`unlinkRequirementFromBacklogItem({ projectId, requirementId, backlogItemId })`**

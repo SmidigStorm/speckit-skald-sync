@@ -29,12 +29,13 @@ state of the product before proposing changes.
 - **`getRequirementForSplit({ id })`** — pre-flight read before
   `splitRequirement`. Returns the rules, examples, and open questions
   so you can plan how they should land on the new requirements.
-- **`getRequirementAsFeatureFile({ projectId, displayId })`** — one
-  requirement as a plain-text Gherkin feature file: its rules and
-  examples, open and answered questions, and the backlog items planned
-  from it. Exactly the text a member copies from Skald, so hand this to a
-  coding agent rather than reassembling the parts. Refuses an archived
-  requirement as archived (PB-271).
+- **`getRequirementsAsFeatureFiles({ projectId, requirements: ["REQ-42", …] })`** —
+  one or more requirements as plain-text Gherkin feature files, in the
+  order asked: rules and examples, open and answered questions, and the
+  backlog items planned from each. Exactly the text a member copies from
+  Skald. Beside each file, `ids` maps every rule and example to the id
+  `updateRules` and `updateExamples` take. An archived requirement is
+  reported as archived and the rest are returned (PB-271, PB-264).
 
 ### Adjacent reads worth doing before a write
 
@@ -78,16 +79,18 @@ Writing section).
 
 - **`createRules({ requirementId, rules: [...] })`** — attach one or
   more rules to a requirement.
-- **`updateRule({ id, ... })`** — change a rule's text.
-- **`archiveRule({ id })`** — soft-remove a rule. Skald has no delete
-  tool by design.
+- **`updateRules({ rules: [{ id, ... }] })`** — change one or more rules,
+  1 to 200 in one call, all or nothing.
+- **`archiveRules({ ids })`** — soft-remove rules and their examples.
+  Skald has no delete tool by design.
 
 ### Examples
 
 - **`createExamples({ ruleId, examples: [...] })`** — attach one or
   more Gherkin examples to a rule.
-- **`updateExample({ id, ... })`** — change an example.
-- **`archiveExample({ id })`** — soft-remove an example.
+- **`updateExamples({ examples: [{ id, ... }] })`** — change one or more
+  examples, 1 to 200 in one call, all or nothing.
+- **`archiveExamples({ ids })`** — soft-remove examples.
 
 ### Open Questions
 

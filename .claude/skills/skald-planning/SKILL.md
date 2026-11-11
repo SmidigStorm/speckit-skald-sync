@@ -83,7 +83,7 @@ that's the right shape for most Bugs and Spikes, and for early-stage
 Features before refinement starts.
 
 When linkage *does* make sense (typically for Features), use
-`linkRequirementToBacklogItem` after confirming with the PM. The
+`linkRequirementsToBacklogItem` (one or more requirements, by REQ-n) after confirming with the PM. The
 relationship is many-to-many; a PBI can implement several requirements,
 and a requirement can be delivered across several PBIs.
 
@@ -327,7 +327,7 @@ Quick reference — the tools you'll reach for most:
   dates, and release** (requirement links are preserved). `restoreBacklogItem`
   brings it back **unassigned** — the cleared associations are not
   reinstated. Resolve an archived PBI via `listPbis({ includeArchived: true })`.
-- `linkRequirementToBacklogItem`, `unlinkRequirementFromBacklogItem` —
+- `linkRequirementsToBacklogItem`, `unlinkRequirementFromBacklogItem` —
   manage the many-to-many trace.
 
 **Adjacent reads** worth doing before writing a PBI:

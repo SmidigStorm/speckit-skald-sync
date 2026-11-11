@@ -144,7 +144,7 @@ After the PM agrees to a split:
 2. Create the new PBIs (`createBacklogItems`) — usually as Refining
    Requirements unless they're obviously ready.
 3. If linked requirements migrate or get re-attributed, use
-   `linkRequirementToBacklogItem` / `unlinkRequirementFromBacklogItem`
+   `linkRequirementsToBacklogItem` / `unlinkRequirementFromBacklogItem`
    to redo the trace.
 4. Update the original PBI's status. Common outcomes:
    - The original PBI becomes one of the splits (most common). Update

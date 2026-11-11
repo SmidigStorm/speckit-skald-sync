@@ -282,8 +282,8 @@ Quick reference — the tools you'll reach for most:
 - `createRequirements`, `updateRequirement`.
 - `splitRequirement`.
 - `archiveRequirement`, `restoreRequirement` — archive is the destructive verb (there is **no delete**); archiving cascade-archives the requirement's rules/examples/open-questions and removes it from active lists, the bin, and search, while preserving PBI links. `restoreRequirement` brings it (and its children) back; resolve the archived requirement via `listRequirements({ includeArchived: true })`.
-- `createRules`, `updateRule`, `archiveRule`.
-- `createExamples`, `updateExample`, `archiveExample`.
+- `createRules`, `updateRules`, `archiveRules` (the last two take a list).
+- `createExamples`, `updateExamples`, `archiveExamples` (the last two take a list).
 - `createOpenQuestions`, `answerOpenQuestion`, `dismissOpenQuestion`, `reopenOpenQuestion`, `archiveOpenQuestion`.
 
 **Adjacent reads** worth doing before writing a requirement:
